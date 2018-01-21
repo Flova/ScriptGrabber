@@ -1,0 +1,16 @@
+{
+    "pages": [
+        {
+            "url": "<URL to Source 1>",
+            "local": "<Path 1>"
+        },
+        {
+            "url": "<URL to Source 2" ,
+            "local": "<Path 2>"
+        },
+        {
+            "url": "<URL to Source 3>",
+            "local": "<Path 3>"
+        }
+    ]
+}
