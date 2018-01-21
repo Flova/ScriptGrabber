@@ -1,21 +1,31 @@
 import requests
 import re
 import os
+import json
 
 
-urls = [
-        ["https://www.math.uni-hamburg.de/home/geschke/lehre.html.de", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/Mathe/"],
-        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/uebung/index.php", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"],
-        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/index.php?content=01-unterlagen", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"]
-    ]
+#urls = [
+#        ["https://www.math.uni-hamburg.de/home/geschke/lehre.html.de", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/Mathe/"],
+#        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/uebung/index.php", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"],
+#        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/index.php?content=01-unterlagen", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"]
+#    ]
 
-#config = open("config.json","r")
 
 text = ""
 
 
+def import_data():
+    urls = []
+    config = json.load(open("config.json", "r"))
+    for index, page in enumerate(config["pages"]):
+        urls.append([page["url"], page["local"]])
+    return urls
+
+
 def main():
-    for url in urls:
+    pages = import_data()
+    print("---- Searching on " + str(len(pages)) + " sources ----")
+    for url in pages:
         r = requests.get(url[0])
         links = re.findall('".*?.pdf"', r.text)
         letzter_slash = len(url[0])
