@@ -4,18 +4,12 @@ import os
 import json
 
 
-#urls = [
-#        ["https://www.math.uni-hamburg.de/home/geschke/lehre.html.de", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/Mathe/"],
-#        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/uebung/index.php", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"],
-#        ["https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/index.php?content=01-unterlagen", "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"]
-#    ]
-
-
 text = ""
 
 
 def import_data():
     urls = []
+    # Change config.json your JSON filename
     config = json.load(open("config.json", "r"))
     for index, page in enumerate(config["pages"]):
         urls.append([page["url"], page["local"]])
