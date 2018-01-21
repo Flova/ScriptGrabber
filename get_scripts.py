@@ -4,9 +4,6 @@ import os
 import json
 
 
-text = ""
-
-
 def import_data():
     urls = []
     # Change config.json your JSON filename
