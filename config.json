@@ -1,0 +1,16 @@
+{
+    "pages": [
+        {
+            "url": "https://www.math.uni-hamburg.de/home/geschke/lehre.html.de",
+            "local": "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/Mathe/"
+        },
+        {
+            "url": "https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/uebung/index.php" ,
+            "local": "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"
+        },
+        {
+            "url": "https://tams.informatik.uni-hamburg.de/lectures/2017ws/vorlesung/rs/index.php?content=01-unterlagen",
+            "local": "/home/florian/Nextcloud/Documents/01 Uni/WISE 1718/RS/"
+        }
+    ]
+}
